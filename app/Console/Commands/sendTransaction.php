@@ -83,9 +83,9 @@ class sendTransaction extends Command
             $this->info("Transaction sent. Response:");
             $this->info($json_response);
 
-            echo $node . "/transactionStatus/" . $tx_hash . PHP_EOL;
-            echo $node . "/transactions/confirmed/" . $tx_hash . PHP_EOL;
-            echo "https://testnet.symbol.fyi/transactions/" . $tx_hash . PHP_EOL;
+            $this->info($node . "/transactionStatus/" . $tx_hash);
+            $this->info($node . "/transactions/confirmed/" . $tx_hash);
+            $this->info("https://testnet.symbol.fyi/transactions/" . $tx_hash);
         } catch (\Exception $e) {
             $this->error("An error occurred: " . $e->getMessage());
             $this->error("File: " . $e->getFile() . " Line: " . $e->getLine());
